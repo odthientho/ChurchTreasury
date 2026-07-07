@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Xcode / XcodeGen — the .xcodeproj is generated from project.yml (run setup.sh)
+xcuserdata/
+*.xcuserstate
+*.xcodeproj
+/build/
+.build/
+DerivedData/
+.swiftpm/
+*.moved-aside
+
+# Promo — keep the scripts and README, exclude the heavy rendered media
+Promo/*.mp4
+Promo/*.mov
+Promo/contact_sheet.png
+Promo/screenshots/
+Promo/slides/
+Promo/build/raw_clips/
+Promo/build/*work/

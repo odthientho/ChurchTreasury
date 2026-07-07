@@ -1,0 +1,95 @@
+name: ChurchTreasury
+options:
+  bundleIdPrefix: com.odthientho
+  deploymentTarget:
+    iOS: "18.0"
+  defaultConfig: Debug
+  xcodeVersion: "16.0"
+  swift: "6.0"
+
+configs:
+  Debug: debug
+  Release: release
+
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    ENABLE_STRICT_CONCURRENCY: complete
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
+    # Personal-team signing baked in so it survives `xcodegen generate`
+    # (regenerating the project wipes anything set only in Xcode's UI).
+    DEVELOPMENT_TEAM: HNJAA2M78P
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  ChurchTreasury:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: ChurchTreasury
+        excludes:
+          - "**/*.md"
+    resources:
+      - path: ChurchTreasury/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.odthientho.ChurchTreasury
+        INFOPLIST_FILE: ChurchTreasury/Info.plist
+        SWIFT_STRICT_CONCURRENCY: complete
+    info:
+      path: ChurchTreasury/Info.plist
+      properties:
+        CFBundleName: Church Treasury
+        CFBundleDisplayName: Church Treasury
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "1"
+        UILaunchScreen:
+          UIColorName: systemBackground
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        CFBundleLocalizations:
+          - en
+          - vi
+        CFBundleDevelopmentRegion: en
+        NSCameraUsageDescription: "Take a photo of a check to scan its details into the offering."
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+
+  ChurchTreasuryTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: ChurchTreasuryTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: ChurchTreasury
+
+  ChurchTreasuryUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: ChurchTreasuryUITests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: ChurchTreasury
+
+schemes:
+  ChurchTreasury:
+    build:
+      targets:
+        ChurchTreasury: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - ChurchTreasuryTests
+        - ChurchTreasuryUITests
