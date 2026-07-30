@@ -67,5 +67,5 @@ To re-render after changing captions/screens: rerun `compose.py` then `assemble.
 - **Music**: currently a soft synthesized pad (royalty-free because it's generated). Drop in your own
   licensed track by muxing it over `video.mp4` if you prefer.
 - **Length**: ~2 min. Trim by removing slides in `assemble.py` (the `durs` list) or shortening `9.5`.
-- The demo shows a real configured church ("Vietnamese Alliance Church of North Atlanta") to look
-  authentic; the app itself is generic and every church sets its own name/logo in **More → Church Info**.
+- The demo shows a fictional configured church ("Grace Fellowship Church") to look authentic; the
+  app itself is generic and every church sets its own name/logo in **More → Church Info**.

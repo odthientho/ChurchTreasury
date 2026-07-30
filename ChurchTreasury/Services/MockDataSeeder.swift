@@ -48,9 +48,11 @@ enum MockDataSeeder {
 
     private static func seedSettings() {
         let d = UserDefaults.standard
-        d.set("Vietnamese Alliance Church of North Atlanta", forKey: "churchName")
-        d.set("1648 Lawrenceville Hwy, Lawrenceville, GA 30044", forKey: "churchAddress")
-        d.set("David Nguyen", forKey: "treasurerName")
+        // Fictional — deliberately not the real church this app was built
+        // for, so demo builds/screenshots never surface real identifying info.
+        d.set("Grace Fellowship Church", forKey: "churchName")
+        d.set("100 Fellowship Way, Alpharetta, GA 30022", forKey: "churchAddress")
+        d.set("Alex Tran", forKey: "treasurerName")
         d.set(1_850_000, forKey: "netAssetAnchorCents")   // $18,500.00
         d.set(date(2026, 4, 1).timeIntervalSince1970, forKey: "netAssetAnchorMonth")
     }
